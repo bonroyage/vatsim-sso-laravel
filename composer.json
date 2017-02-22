@@ -1,0 +1,38 @@
+{
+    "name" : "vatsim/sso-laravel",
+    "description" : "VATSIM OAuth for Laravel",
+    "keywords" : [
+        "vatsim",
+        "oauth",
+        "laravel",
+        "sso"
+    ],
+    "license" : "MIT",
+    "authors" : [
+        {
+            "name" : "Kieran Hardern",
+            "email" : "kieran@hardern.net"
+        },
+        {
+            "name" : "Roy de Vos Burchart",
+            "email" : "dev@bonroyage.com",
+            "homepage" : "http://www.bonroyage.com"
+        }
+    ],
+    "support" : {
+        "issues" : "https://github.com/KHardern/VatsimSSO-Laravel/issues",
+        "wiki" : "https://github.com/KHardern/VatsimSSO-Laravel/wiki"
+    },
+    "require" : {
+        "php" : ">=5.4.0",
+        "vatsim/sso" : "dev-develop",
+        "illuminate/support" : "4.*|5.*",
+        "illuminate/http" : "4.*|5.*"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "Vatsim\\OAuthLaravel\\" : "src/"
+        }
+    },
+    "minimum-stability" : "dev"
+}
