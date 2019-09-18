@@ -1,6 +1,7 @@
 <?php namespace Vatsim\OAuthLaravel;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Arr;
 use Vatsim\OAuth\SSO;
 
 class OAuthServiceProvider extends ServiceProvider {
@@ -22,7 +23,7 @@ class OAuthServiceProvider extends ServiceProvider {
 		$app = $this->app;
 
 		// Laravel 4.x compatibility
-		if ( version_compare($app::VERSION, '5.0') < 0 )
+		if (version_compare($app::VERSION, '5.0', '<'))
 		{
 			$this->package('vatsim/sso-laravel', 'vatsim', __DIR__);
 		}
@@ -53,11 +54,11 @@ class OAuthServiceProvider extends ServiceProvider {
 			}
 
 			return new SSO(
-				array_get($config, 'base'), // base
-				array_get($config, 'key'), // key
-				array_get($config, 'secret'), // secret
-				array_get($config, 'method'), // method
-				array_get($config, 'cert') // certificate
+				Arr::get($config, 'base'), // base
+				Arr::get($config, 'key'), // key
+				Arr::get($config, 'secret'), // secret
+				Arr::get($config, 'method'), // method
+				Arr::get($config, 'cert') // certificate
 			);
 		});
 	}
