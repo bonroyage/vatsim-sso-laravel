@@ -22,17 +22,9 @@ class OAuthServiceProvider extends ServiceProvider {
 	{
 		$app = $this->app;
 
-		// Laravel 4.x compatibility
-		if (version_compare($app::VERSION, '5.0', '<'))
-		{
-			$this->package('vatsim/sso-laravel', 'vatsim', __DIR__);
-		}
-		else
-		{
-			$this->publishes([
-				__DIR__ . '/config.php' => config_path('vatsim-sso.php'),
-			], 'config');
-		}
+        $this->publishes([
+            __DIR__ . '/config.php' => config_path('vatsim-sso.php'),
+        ], 'config');
 	}
 
 	/**
@@ -44,8 +36,7 @@ class OAuthServiceProvider extends ServiceProvider {
 	{
 		$this->app->singleton('vatsimoauth', function ( $app )
 		{
-			// vatsim::config is Laravel 4.x
-			$config = $app['config']['vatsim-sso'] ?: $app['config']['vatsim::config'];
+			$config = $app['config']['vatsim-sso'];
 
 			// Make sure we don't crash when we did not publish the config file
 			if ( is_null($config) )
