@@ -5,7 +5,7 @@ VatsimSSO for Laravel
 
 The VatsimSSO package integrates with the VATSIM.net Single Sign On, which lets your users log themselves in using their VATSIM ID. This is especially useful for official vACCs and ARTCCs.
 
-This package supports both Laravel 4 and 5.
+This package supports both Laravel 5 and 6.
 
 Installation
 --------------
@@ -18,7 +18,7 @@ $ composer require vatsim/sso-laravel 3.*
 
 ### Set up
 
-Add the provider and facade to your `app.php` config file (Laravel 4: `app/config/app.php`, Laravel 5: `config/app.php`).
+Add the provider and facade to your `app.php` config file (`config/app.php`).
 
 - **Provider:** `Vatsim\OAuthLaravel\OAuthServiceProvider`
 - **Facade:** `Vatsim\OAuthLaravel\SSOFacade`
@@ -26,10 +26,6 @@ Add the provider and facade to your `app.php` config file (Laravel 4: `app/confi
 ### Configuration file
 Use artisan to publish the configuration file. Change the settings accordingly.
 ```sh
-# Laravel 4 --> app/config/packages/vatsim/sso-laravel/config.php
-$ artisan config:publish vatsim/sso-laravel
-
-# Laravel 5 --> config/vatsim-sso.php
 $ artisan vendor:publish --provider="Vatsim\OAuthLaravel\OAuthServiceProvider"
 ```
 It is __strongly__ recommended you use Laravel's built-in support for environment files to protect sensitive data. Additional details can be found in the comments of the config file.
