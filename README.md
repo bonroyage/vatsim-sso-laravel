@@ -1,3 +1,8 @@
+# This package is no longer maintained. Consider using the [Laravel Socialite provider](https://socialiteproviders.com/Vatsim/).
+
+---
+
+
 VatsimSSO for Laravel
 =========
 
